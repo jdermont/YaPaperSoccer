@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="pl.derjack.papersoccer_single"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="pl.derjack.papersoccer.MainActivity"
+                  android:label="@string/app_name"
+                  android:screenOrientation="sensorPortrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="pl.derjack.papersoccer.TutorialActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="sensorPortrait"/>
+        <activity
+            android:name="pl.derjack.papersoccer.game.GameActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="sensorPortrait"/>
+        <activity
+            android:name="pl.derjack.papersoccer.settings.SettingsActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="sensorPortrait"/>
+        <activity
+            android:name="pl.derjack.papersoccer.settings.SettingsActivityOld"
+            android:theme="@style/AppThemeOld"
+            android:label="@string/app_name"
+            android:screenOrientation="sensorPortrait"/>
+    </application>
+
+</manifest>

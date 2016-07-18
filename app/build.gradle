@@ -1,0 +1,44 @@
+apply plugin: 'com.android.model.application'
+
+model {
+    android {
+        compileSdkVersion 23
+        buildToolsVersion "23.0.2"
+
+        defaultConfig {
+            applicationId "pl.derjack.papersoccer_single"
+            minSdkVersion.apiLevel 10
+            targetSdkVersion.apiLevel 23
+            versionCode 69
+            versionName "1.6.2"
+        }
+        buildTypes {
+            release {
+                minifyEnabled false
+                proguardFiles.add(file('proguard-android.txt'))
+            }
+        }
+        ndk {
+            moduleName = "cpujni"
+            stl = "gnustl_static"
+            cppFlags.add("-std=c++11")
+            cppFlags.add("-O3")
+            //cppFlags.add("log")
+        }
+
+        productFlavors {
+            create("all") {
+                ndk.abiFilters.add("armeabi")
+                ndk.abiFilters.add("armeabi-v7a")
+                ndk.abiFilters.add("x86")
+            }
+        }
+    }
+}
+
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+}

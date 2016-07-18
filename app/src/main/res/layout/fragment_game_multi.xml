@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/scoreTxt"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold"
+        android:typeface="monospace"
+        android:text="00 : 00" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
+            android:id="@+id/playerOneTxt"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#0000FF"
+            android:singleLine="true"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/undoBtn1"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/playerOneTxt"
+            android:layout_toEndOf="@+id/playerOneTxt"
+            android:src="@drawable/back"
+            android:background="@null"/>
+    </RelativeLayout>
+
+
+    <pl.derjack.papersoccer.objects.FieldView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/fieldView"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp">
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_centerInParent="true"
+            android:id="@+id/playerTwoTxt"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FF0000"
+            android:singleLine="true"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/undoBtn2"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/playerTwoTxt"
+            android:layout_toEndOf="@+id/playerTwoTxt"
+            android:src="@drawable/back"
+            android:background="@null"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/start_game"
+            android:id="@+id/startGameBtn"
+            android:layout_centerInParent="true"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:id="@+id/tapBallTxt"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/tap_the_ball_to_continue"
+            android:singleLine="true"/>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/paper_soccer">
+    <EditTextPreference
+        android:key="player_name"
+        android:title="@string/player_name"
+        android:defaultValue="@string/default_player_name"
+        android:singleLine="true"
+        android:maxLength="16" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/appearance">
+        <Preference
+            android:key="player1_color"
+            android:title="@string/player_1_color"
+            android:defaultValue="red" />
+        <Preference
+            android:key="player2_color"
+            android:title="@string/player_2_color"
+            android:defaultValue="blue" />
+    </PreferenceCategory>
+</PreferenceScreen>

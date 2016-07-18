@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="colors">
+        <item>Czerwony</item>
+        <item>Niebieski</item>
+        <item>Zielony</item>
+        <item>Pomarańczowy</item>
+        <item>Fioletowy</item>
+        <item>Seledynowy</item>
+    </string-array>
+
+    <string-array name="colors_values">
+        <item>red</item>
+        <item>blue</item>
+        <item>green</item>
+        <item>orange</item>
+        <item>purple</item>
+        <item>seledine</item>
+    </string-array>
+
+    <string name="app_name">Ya Piłkarzyki single</string>
+    <string name="you_lose">Przegrałeś!</string>
+    <string name="you_win">Wygrałeś!</string>
+    <string name="yes">Tak</string>
+    <string name="wifi_not_enabled">Wifi nie jest włączone</string>
+    <string name="wifi_game">Gra Wifi</string>
+    <string name="waiting_for_other_player">Czekanie na innego gracza...</string>
+    <string name="via_wifi_lan">Przez Wifi</string>
+    <string name="via_play_services">Przez Google Gry</string>
+    <string name="via_bluetooth">Przez Bluetooth</string>
+    <string name="very_easy">Bardzo łatwy</string>
+    <string name="tutorial">Jak grać</string>
+    <string name="tap_the_ball_to_continue">Naciśnij piłkę by potwierdzić</string>
+    <string name="stop">Stop</string>
+    <string name="start_game">Nowa gra</string>
+    <string name="small_6_8">Małe (6x8)</string>
+    <string name="single_player">Gra jednoosobowa</string>
+    <string name="sign_out">Wyloguj</string>
+    <string name="settings">Ustawienia</string>
+    <string name="scanning">Skanowanie...</string>
+    <string name="scan">Skanuj</string>
+    <string name="press_scan_to_start">Naciśnij skanuj by wyszukać dostępne urządzenia</string>
+    <string name="port">Port:</string>
+    <string name="other">Inny</string>
+    <string name="on_this_device">Na tym urządzeniu</string>
+    <string name="ok">OK</string>
+    <string name="normal_8_10">Normalne (8x10)</string>
+    <string name="normal">Normalny</string>
+    <string name="no_connection_available">Brak połączenia</string>
+    <string name="no_bluetooth_devices">Nie znaleziono urządzeń Bluetooth</string>
+    <string name="no">Nie</string>
+    <string name="new_game_in">Nowa gra za %d...</string>
+    <string name="multi_player">Gra wieloosobowa</string>
+    <string name="join_game">Dołącz</string>
+    <string name="ip_address">Adres IP:</string>
+    <string name="information">Informacja</string>
+    <string name="host_game">Załóż grę</string>
+    <string name="hard">Trudny</string>
+    <string name="half_line">Linia połowy</string>
+    <string name="guest">Gość</string>
+    <string name="game_over">Koniec gry</string>
+    <string name="exit">Wyjście</string>
+    <string name="easy">Łatwy</string>
+    <string name="do_you_want_to_exit">Chcesz opuścić grę?</string>
+    <string name="default_player_name">Gracz</string>
+    <string name="connection_closed">Połączenie przerwane</string>
+    <string name="connecting_error">Błąd w połączeniu</string>
+    <string name="connecting">Łączenie...</string>
+    <string name="connect">Połącz</string>
+    <string name="choose_field">Wybierz boisko</string>
+    <string name="cancel">Anuluj</string>
+    <string name="bluetooth_game">Gra bluetooth</string>
+    <string name="big_10_12">Duże (10x12)</string>
+    <string name="advanced">Zaawansowany</string>
+    <string name="next_step">Dalej</string>
+    <string name="tutorial_0">Zaczynasz na środku.\nMożesz poruszać się pionowo, poziomo lub na skos.</string>
+    <string name="tutorial_1">Kiedy skończysz, ruch należy do przeciwnika.</string>
+    <string name="tutorial_2">Nie możesz przejść po narysowanej linii, ale możesz się od niej odbić.</string>
+    <string name="tutorial_3">Wygrywasz kiedy piłka znajdzie się w bramce przeciwnika. Przegrywasz kiedy znajdzie się w twojej bramce.</string>
+    <string name="tutorial_4">Gracz przegrywa również, kiedy nie może wykonać prawidłowego ruchu.</string>
+    <string name="paper_soccer">Piłkarzyki</string>
+    <string name="player_1_color">Kolor 1. gracza</string>
+    <string name="player_2_color">Kolor 2. gracza</string>
+    <string name="player_name">Imię</string>
+    <string name="appearance">Wygląd</string>
+    <string name="play_services">Google Gry</string>
+    <string name="please_wait">Czekaj...</string>
+    <string name="me">(ja)</string>
+    <string name="benchmark">Benchmark</string>
+    <string name="benchmark_description">Ten test symuluje grę Zaawansowany vs Zaawansowany na normalnym boisku. Po każdej grze średnia szybkość (ruchy na sekundę) jest uaktualniana. Test trwa nieprzerwanie dopóki nie wciśniesz stop lub nie opuścisz tego ekranu. Poczekaj do rozegrania co najmniej 50 gier, żeby mieć konkretne wyniki.</string>
+    <string name="benchmark_statistics">Rozegrane gry: %1$d\nRuchy na sekundę: %2$d</string>
+    <string name="start_benchmark">Start benchmark</string>
+    <string name="stop_benchmark">Stop benchmark</string>
+</resources>

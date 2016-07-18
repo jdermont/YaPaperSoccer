@@ -1,0 +1,95 @@
+<resources>
+    <string-array name="colors">
+        <item>Red</item>
+        <item>Blue</item>
+        <item>Green</item>
+        <item>Orange</item>
+        <item>Purple</item>
+        <item>Seledine</item>
+    </string-array>
+
+    <string-array name="colors_values">
+        <item>red</item>
+        <item>blue</item>
+        <item>green</item>
+        <item>orange</item>
+        <item>purple</item>
+        <item>seledine</item>
+    </string-array>
+
+    <string name="app_name">Ya Paper Soccer single</string>
+    <string name="app_id" translatable="false">517633637093</string>
+    <!-- <string name="app_id" translatable="false">850299537881</string> -->
+    <string name="default_player_name">Player</string>
+    <string name="very_easy">Very easy</string>
+    <string name="easy">Easy</string>
+    <string name="normal">Normal</string>
+    <string name="advanced">Advanced</string>
+    <string name="hard">Hard</string>
+    <string name="bluetooth_game">Bluetooth game</string>
+    <string name="wifi_game">Wifi game</string>
+    <string name="wifi_not_enabled">Wifi is not enabled</string>
+    <string name="no_connection_available">No connection available</string>
+    <string name="connecting">Connecting...</string>
+    <string name="waiting_for_other_player">Waiting for other player...</string>
+    <string name="new_game_in">New game in %d...</string>
+    <string name="tap_the_ball_to_continue">Tap the ball to continue</string>
+    <string name="other">Other</string>
+    <string name="game_over">Game over</string>
+    <string name="you_win">You win!</string>
+    <string name="you_lose">You lose!</string>
+    <string name="information">Information</string>
+    <string name="connection_closed">Connection closed</string>
+    <string name="connecting_error">Connecting error</string>
+    <string name="exit">Exit</string>
+    <string name="do_you_want_to_exit">Do you want to exit?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="guest">Guest</string>
+    <string name="single_player">Single player</string>
+    <string name="multi_player">Multi player</string>
+    <string name="tutorial">Tutorial</string>
+    <string name="settings">Settings</string>
+    <string name="on_this_device">On this device</string>
+    <string name="via_play_services">Via Play Services</string>
+    <string name="via_bluetooth">Via Bluetooth</string>
+    <string name="via_wifi_lan">Via Wifi LAN</string>
+    <string name="start_game">Start game</string>
+    <string name="ip_address">Ip address:</string>
+    <string name="port">Port:</string>
+    <string name="small_6_8">Small (6x8)</string>
+    <string name="normal_8_10">Normal (8x10)</string>
+    <string name="big_10_12">Big (10x12)</string>
+    <string name="half_line">Half line</string>
+    <string name="scanning">Scanning...</string>
+    <string name="sign_out">Sign out</string>
+    <string name="choose_field">Choose pitch</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="press_scan_to_start">Press scan to start scanning for Bluetooth devices</string>
+    <string name="stop">Stop</string>
+    <string name="scan">Scan</string>
+    <string name="no_bluetooth_devices">No Bluetooth devices found nearby</string>
+    <string name="connect">Connect</string>
+    <string name="host_game">Host game</string>
+    <string name="join_game">Join game</string>
+    <string name="tutorial_0">You start at centre.\nYou can move vertically, horizontally or diagonally.</string>
+    <string name="tutorial_1">Once you\'re done, then turn goes to opponent.</string>
+    <string name="tutorial_2">You can\'t take already drawn line, but you can bounce off it.</string>
+    <string name="tutorial_3">You win when ball will be in your opponent\'s goal. You lose if ball will be in your goal</string>
+    <string name="tutorial_4">Player can also lose when gets blocked (can\'t make valid move)</string>
+    <string name="next_step">Next step</string>
+    <string name="player_name">Player name</string>
+    <string name="player_1_color">Player 1 color</string>
+    <string name="player_2_color">Player 2 color</string>
+    <string name="paper_soccer">Paper Soccer</string>
+    <string name="appearance">Appearance</string>
+    <string name="please_wait">Please wait...</string>
+    <string name="play_services">Play services</string>
+    <string name="me"> (me)</string>
+    <string name="benchmark">Benchmark</string>
+    <string name="benchmark_description">This benchmark simulates playing Advanced AI vs Advanced AI in normal sized pitch. After each game, the average speed (moves per second) is updated. Benchmark lasts indefinitely until stopped or left this screen. To get conclusive results, wait for completion at least 50 games.</string>
+    <string name="benchmark_statistics">Games played: %1$d\nMoves per second: %2$d</string>
+    <string name="stop_benchmark">Stop benchmark</string>
+    <string name="start_benchmark">Start benchmark</string>
+</resources>
