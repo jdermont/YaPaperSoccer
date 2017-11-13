@@ -26,7 +26,7 @@ Trzeba sobie zadać pytanie jak liczyć ruchy. Spójrzmy na poniższy obrazek:
 
 W piłkarzykach nie jest ważna kolejność, a zajęte kreski. W tym wypadku pewne ruchy się powtarzają. Np. ruch ABCDA2 i ADCBA2 są takie same (mają te same kreski), więc bez sensu jest je obydwie analizować. Trochę zajęło mi zaimplementowanie algorytmu, który by nie powtarzał tych ruchów... Uznaję, że na powyższym rysunku gracz ma 52 możliwe ruchy do wykonania. Nie liczę powtarzających się ruchów, co by dało razem 57 możliwości.
 
-Na standardowym boisku jest 80 wolnych punktów, zatem maksymalna głębokość drzewa gry wynosi 81. Przy pierwszej turze jest 8 możliwości. Przy drugiej 7 możliwości. Potem w zależności jest odpowiednio 7 albo 12. Następnie gra może potoczyć się różnymi ścieżkami z różnymi możliwościami. Jaka jest zatem średnia ilość możliwych ruchów na turę w piłkarzykach?
+Na standardowym boisku jest 65 wolnych punktów, zatem maksymalna głębokość drzewa gry wynosi 66. Przy pierwszej turze jest 8 możliwości. Przy drugiej 7 możliwości. Potem w zależności jest odpowiednio 7 albo 12. Następnie gra może potoczyć się różnymi ścieżkami z różnymi możliwościami. Jaka jest zatem średnia ilość możliwych ruchów na turę w piłkarzykach?
 
 Aby odpowiedzieć na pytanie jaka jest średnia ilość możliwych ruchów na na turę, zaprojektowałem specjalne AI do tego celu. Przeprowadziłem symulacje tysięcy gier AI vs AI. Taki AI wyliczał tylko swoje ruchy bez odpowiedzi przeciwnika oraz nie posiadał ogranicznika, który występuje w kodzie w repozytorium. Zanim odpowiem na powyższe pytanie, napiszę maksymalną ilość możliwości na jaką napotkałem w tych symulacjach: 433'647. Ponad 400 tysięcy niepowtarzających się ruchów w obrębie tury jednego gracza!. Oto ta sytuacja:
 
