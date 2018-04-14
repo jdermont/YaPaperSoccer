@@ -1,7 +1,6 @@
 package pl.derjack.papersoccer.menu;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
@@ -10,10 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import pl.derjack.papersoccer_single.R;
 import pl.derjack.papersoccer.TutorialActivity;
 import pl.derjack.papersoccer.settings.SettingsActivity;
-import pl.derjack.papersoccer.settings.SettingsActivityOld;
+import pl.derjack.papersoccer_single.R;
 
 public class MainFragment extends MenuFragment {
     public static final String TAG = "MainFragment";
@@ -58,13 +56,8 @@ public class MainFragment extends MenuFragment {
                 break;
             }
             case R.id.settingsBtn:
-                if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-                    Intent intent = new Intent(getActivity(), SettingsActivity.class);
-                    startActivity(intent);
-                } else {
-                    Intent intent = new Intent(getActivity(), SettingsActivityOld.class);
-                    startActivity(intent);
-                }
+                Intent intent = new Intent(getActivity(), SettingsActivity.class);
+                startActivity(intent);
                 break;
         }
         ft.commit();

@@ -1,44 +1,46 @@
-apply plugin: 'com.android.model.application'
+apply plugin: 'com.android.application'
 
-model {
-    android {
-        compileSdkVersion 23
-        buildToolsVersion "23.0.2"
-
-        defaultConfig {
-            applicationId "pl.derjack.papersoccer_single"
-            minSdkVersion.apiLevel 10
-            targetSdkVersion.apiLevel 23
-            versionCode 69
-            versionName "1.6.2"
-        }
-        buildTypes {
-            release {
-                minifyEnabled false
-                proguardFiles.add(file('proguard-android.txt'))
-            }
-        }
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "pl.derjack.papersoccer_single"
+        minSdkVersion 18
+        targetSdkVersion 26
+        versionCode 17
+        versionName "1.7.1"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        resConfigs "en", "pl"
         ndk {
-            moduleName = "cpujni"
-            stl = "gnustl_static"
-            cppFlags.add("-std=c++11")
-            cppFlags.add("-O3")
-            //cppFlags.add("log")
+            abiFilters 'armeabi-v7a', "arm64-v8a", "x86"
         }
-
-        productFlavors {
-            create("all") {
-                ndk.abiFilters.add("armeabi")
-                ndk.abiFilters.add("armeabi-v7a")
-                ndk.abiFilters.add("x86")
+        externalNativeBuild {
+            cmake {
+                arguments "-DANDROID_TOOLCHAIN=gcc"
+                cppFlags "-std=c++11", "-O3"
+                abiFilters 'armeabi-v7a', "arm64-v8a", "x86"
             }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
         }
     }
 }
 
-
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.4.0'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    testImplementation 'junit:junit:4.12'
 }

@@ -10,6 +10,7 @@
         android:theme="@style/AppTheme">
         <activity android:name="pl.derjack.papersoccer.MainActivity"
                   android:label="@string/app_name"
+                  android:resizeableActivity="false"
                   android:screenOrientation="sensorPortrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -19,19 +20,17 @@
         <activity
             android:name="pl.derjack.papersoccer.TutorialActivity"
             android:label="@string/app_name"
+            android:resizeableActivity="false"
             android:screenOrientation="sensorPortrait"/>
         <activity
             android:name="pl.derjack.papersoccer.game.GameActivity"
             android:label="@string/app_name"
+            android:resizeableActivity="false"
             android:screenOrientation="sensorPortrait"/>
         <activity
             android:name="pl.derjack.papersoccer.settings.SettingsActivity"
             android:label="@string/app_name"
-            android:screenOrientation="sensorPortrait"/>
-        <activity
-            android:name="pl.derjack.papersoccer.settings.SettingsActivityOld"
-            android:theme="@style/AppThemeOld"
-            android:label="@string/app_name"
+            android:resizeableActivity="false"
             android:screenOrientation="sensorPortrait"/>
     </application>
 
