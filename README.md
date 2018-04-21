@@ -11,3 +11,6 @@ Abstract of theory how the algorithm works is in this [file](ai_readme/paper_soc
 As for Ya Paper Soccer in the store, I will be doing simple maintenance, bugfixes and updates for newer Android versions if it will be ever needed. Right now I'm just happy with what I got so far.
 
 This project is licensed under MIT License.
+
+## 17 April 2018
+Project rewritten to new gradle system, works for Android Studio 3.1. Compiled for NDK 15c. It seems GCC produces 20% faster code than Clang.
