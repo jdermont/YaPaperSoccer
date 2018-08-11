@@ -8,7 +8,7 @@ The game is available on [Google Play][yapapersoccer]. The limited source code (
 
 # Brief theory
 
-Ya Paper Soccer uses [min-max][minmax] with [alpha-beta][alphabeta] pruning algorithm. There is also a bit of [iterative deepening][itedeep].
+Ya Paper Soccer uses [min-max][minmax] with [alpha-beta][alphabeta] pruning algorithm. There is also a bit of [iterative deepening][itedeep]. (Update: August 2018) Experimental level uses Monte Carlo Tree Search.
 
 The move is whatever player can do during his turn. The move may contain one bounce but as well several bounces. This will be convenient because each turn can be represented as one ply. The order of move within a turn doesn't matter, so sometimes "different" moves will have the same result. Let's look at example:
 

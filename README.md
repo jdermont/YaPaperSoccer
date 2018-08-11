@@ -14,3 +14,6 @@ This project is licensed under MIT License.
 
 ## 17 April 2018
 Project rewritten to new gradle system, works for Android Studio 3.1. Compiled for NDK 15c. It seems GCC produces 20% faster code than Clang.
+
+## August 2018
+Added experimental level which uses Monte Carlo Tree Search, which is superior than this minmax/alphabeta approach.

@@ -8,7 +8,7 @@ Jest to gra na Androida dostępna w [Google Play][yapapersoccer] Ograniczony kod
 
 # Trochę teorii
 
-To o czym tutaj napiszę to strumień myśli, doświadczenia, które zebrałem pisząc sztuczną inteligencję do piłkarzyków. Ya Piłkarzyki wykorzystuje stary dobry [min-max][minmax] oraz oczywiście [alpha-beta][alphabeta]. Zakładam, że te algorytmy są nieco znane i rozumiane.
+To o czym tutaj napiszę to strumień myśli, doświadczenia, które zebrałem pisząc sztuczną inteligencję do piłkarzyków. Ya Piłkarzyki wykorzystuje stary dobry [min-max][minmax] oraz oczywiście [alpha-beta][alphabeta]. Zakładam, że te algorytmy są nieco znane i rozumiane. (Sierpień 2018): Poziom eksperymentalny używa Monte Carlo Tree Search.
 
 Czym jest ruch? Ruchem nazywam to, co w danej chwili może wykonać gracz. W piłkarzykach można odbijać się od narysowanych kresek i zyskać kika 'ruchów'. Jednak ja ruchem nazywam tę sekwencję kresek, którą wykona dany gracz w swojej turze, czyli ruch może się składać z jednej kreski albo nawet przejść przez całe boisko wykorzystując kilkanaście kresek. Będzie to jednocześnie wygodne do drzewa min-max, ponieważ taki ruch będzie w jednej turze, na jednym poziomie. Po angielsku nazywamy ply.
 
