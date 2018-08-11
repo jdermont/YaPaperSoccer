@@ -36,6 +36,7 @@ public class SingleGameFragment extends GameFragment implements Handler.Callback
     public static final int FINISH_MOVE = 1;
     private int mDifficulty;
     private long mDelay = 900L;
+    private int mRuchy = 0;
 
     private Cpu mCpu;
     private ProgressBar mThinkingIcon;
@@ -45,7 +46,7 @@ public class SingleGameFragment extends GameFragment implements Handler.Callback
         @Override
         public void run() {
             long start = SystemClock.elapsedRealtime();
-            String move = mCpu.getMove();
+            String move = mCpu.getMove(mRuchy);
             long stop = SystemClock.elapsedRealtime();
             if (stop-start < mDelay) {
                 try {
@@ -95,7 +96,7 @@ public class SingleGameFragment extends GameFragment implements Handler.Callback
             mGame = new Game(mFieldOptions);
             mGame.startGame();
             mCpu = new Cpu(mDifficulty, mFieldOptions);
-            mCpu.initialize();
+            mCpu.initialize(mSettings.getThreads());
             mCpu.startGame();
         }
     }
@@ -118,6 +119,7 @@ public class SingleGameFragment extends GameFragment implements Handler.Callback
             case Cpu.EASY: cpuString = getString(R.string.easy); break;
             case Cpu.ADVANCED: cpuString = getString(R.string.advanced); break;
             case Cpu.HARD: cpuString = getString(R.string.hard); break;
+            case Cpu.EXPERIMENTAL: cpuString = getString(R.string.experimental); break;
             default: cpuString = getString(R.string.normal); break;
         }
         mPlayerOneTxt.setText(cpuString);
@@ -192,6 +194,7 @@ public class SingleGameFragment extends GameFragment implements Handler.Callback
 
     @Override
     public void onBallTapped() {
+        mRuchy++;
         mDraftBall = false;
         fieldView.setDraftBall(mDraftBall);
         fieldView.notifyFieldChanged();
@@ -339,6 +342,7 @@ public class SingleGameFragment extends GameFragment implements Handler.Callback
             }
             fieldView.notifyFieldChanged();
             updateViews(true);
+            mRuchy++;
         }
         fieldView.invalidate();
         return true;

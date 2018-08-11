@@ -53,6 +53,7 @@ public class SingleFragment extends MenuFragment {
         ((Button)rootView.findViewById(R.id.normalBtn)).setOnClickListener(this);
         ((Button)rootView.findViewById(R.id.advancedBtn)).setOnClickListener(this);
         ((Button)rootView.findViewById(R.id.hardBtn)).setOnClickListener(this);
+        ((Button)rootView.findViewById(R.id.experimentalBtn)).setOnClickListener(this);
         return rootView;
     }
 
@@ -87,6 +88,7 @@ public class SingleFragment extends MenuFragment {
             case R.id.easyBtn: mChosenDifficulty = Cpu.EASY; break;
             case R.id.advancedBtn: mChosenDifficulty = Cpu.ADVANCED; break;
             case R.id.hardBtn: mChosenDifficulty = Cpu.HARD; break;
+            case R.id.experimentalBtn: mChosenDifficulty = Cpu.EXPERIMENTAL; break;
             default: mChosenDifficulty = Cpu.NORMAL; break;
         }
         FieldChooserDialog dialog = new FieldChooserDialog();

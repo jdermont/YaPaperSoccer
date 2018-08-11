@@ -26,6 +26,7 @@
     <string name="normal">Normal</string>
     <string name="advanced">Advanced</string>
     <string name="hard">Hard</string>
+    <string name="experimental">Experimental</string>
     <string name="bluetooth_game">Bluetooth game</string>
     <string name="wifi_game">Wifi game</string>
     <string name="wifi_not_enabled">Wifi is not enabled</string>

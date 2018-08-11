@@ -67,4 +67,23 @@ public class Settings {
         editor.apply();
     }
 
+    public void setThreads(int threads) {
+        SharedPreferences.Editor editor = mPref.edit();
+        editor.putString("threads",String.valueOf(threads));
+        editor.apply();
+    }
+
+    public int getThreads() {
+        int numCores = Runtime.getRuntime().availableProcessors();
+        int def = Math.max(numCores/2,1);
+        try {
+            String output = mPref.getString("threads",null);
+            int parsed = Integer.parseInt(output);
+            if (parsed < 0) parsed = 1;
+            if (parsed > numCores) parsed = numCores;
+            return parsed;
+        } catch (Exception e) {
+            return def;
+        }
+    }
 }

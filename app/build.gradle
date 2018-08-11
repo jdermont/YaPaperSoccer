@@ -6,8 +6,8 @@ android {
         applicationId "pl.derjack.papersoccer_single"
         minSdkVersion 18
         targetSdkVersion 26
-        versionCode 17
-        versionName "1.7.1"
+        versionCode 18
+        versionName "1.8.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         resConfigs "en", "pl"
         ndk {
@@ -16,7 +16,7 @@ android {
         externalNativeBuild {
             cmake {
                 arguments "-DANDROID_TOOLCHAIN=gcc"
-                cppFlags "-std=c++11", "-O3"
+                cppFlags "-std=c++11", "-Ofast"
                 abiFilters 'armeabi-v7a', "arm64-v8a", "x86"
             }
         }

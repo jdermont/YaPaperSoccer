@@ -30,16 +30,17 @@ void doMove(string move) {
     }
 }
 
-JNIEXPORT void JNICALL Java_pl_derjack_papersoccer_objects_Cpu_initializeCpu(JNIEnv *env, jobject instance, jint difficulty) {
+JNIEXPORT void JNICALL Java_pl_derjack_papersoccer_objects_Cpu_initializeCpu(JNIEnv *env, jobject instance, jint difficulty, jint threadsNum) {
     Difficulty diff;
     switch (difficulty) {
         case 0: diff = Difficulty::VERYEASY; break;
         case 1: diff = Difficulty::EASY; break;
         case 3: diff = Difficulty::ADVANCED; break;
         case 4: diff = Difficulty::HARD; break;
+        case 5: diff = Difficulty::EXPERIMENTAL; break;
         default: diff = Difficulty::NORMAL;
     }
-    cpu.reset(new Cpu(Player::ONE,diff));
+    cpu.reset(new Cpu(Player::ONE,diff, threadsNum));
 }
 
 JNIEXPORT void JNICALL Java_pl_derjack_papersoccer_objects_Cpu_startGame(JNIEnv *env, jobject instance, jint fieldSize, jboolean halfLine) {
@@ -51,6 +52,7 @@ JNIEXPORT void JNICALL Java_pl_derjack_papersoccer_objects_Cpu_startGame(JNIEnv 
     }
     //__android_log_print(ANDROID_LOG_DEBUG, "CPU", "startGame %d %d", fieldSize, halfLine);
     cpu->setField(new Field(fSize,(bool)halfLine));
+    cpu->ruchy = 0;
 }
 
 JNIEXPORT void JNICALL Java_pl_derjack_papersoccer_objects_Cpu_updateGame(JNIEnv *env, jobject instance, jstring move) {
@@ -67,13 +69,19 @@ JNIEXPORT void JNICALL Java_pl_derjack_papersoccer_objects_Cpu_updateGame(JNIEnv
     env->ReleaseStringUTFChars(move, nativeString);
 }
 
-JNIEXPORT jstring JNICALL Java_pl_derjack_papersoccer_objects_Cpu_getBestMove(JNIEnv *env, jobject instance) {
+JNIEXPORT jstring JNICALL Java_pl_derjack_papersoccer_objects_Cpu_getBestMove(JNIEnv *env, jobject instance, jint ruchy) {
     env->MonitorEnter(instance);
     if (!cpu) {
         env->MonitorExit(instance);
         return env->NewStringUTF("");
     }
-    string move = cpu->getBestMove();
+    string move;
+    if (cpu->difficulty == Difficulty::EXPERIMENTAL) {
+        cpu->ruchy = ruchy;
+        move = cpu->getBestMoveMCTS();
+    } else {
+        move = cpu->getBestMove();
+    }
     env->MonitorExit(instance);
     //__android_log_print(ANDROID_LOG_DEBUG, "CPU", "getBestMove %s", move.c_str());
     return env->NewStringUTF(move.c_str());
@@ -91,8 +99,8 @@ JNIEXPORT void JNICALL Java_pl_derjack_papersoccer_objects_Cpu_releaseCpu(JNIEnv
 JNIEXPORT jlongArray JNICALL Java_pl_derjack_papersoccer_objects_Cpu_benchmarkOneGame(JNIEnv *env, jobject instance) {
     Game game;
     game.startGame();
-    Cpu cpu1(Player::ONE,Difficulty::ADVANCED);
-    Cpu cpu2(Player::TWO,Difficulty::ADVANCED);
+    Cpu cpu1(Player::ONE,Difficulty::ADVANCED, 1);
+    Cpu cpu2(Player::TWO,Difficulty::ADVANCED, 1);
     cpu1.setField(game.field);
     cpu2.setField(game.field);
     int moves = 0;
@@ -121,4 +129,13 @@ JNIEXPORT jlongArray JNICALL Java_pl_derjack_papersoccer_objects_Cpu_benchmarkOn
     jlong resultTmp[] = {moves, czas};
     env->SetLongArrayRegion(result, 0, 2, resultTmp);
     return result;
+}
+
+JNIEXPORT jint JNICALL Java_pl_derjack_papersoccer_objects_Cpu_benchmarkMCTS(JNIEnv *env, jclass type, jint threadsNum) {
+    Game game;
+    game.startGame();
+    Cpu cpu1(Player::ONE,Difficulty::EXPERIMENTAL, threadsNum);
+    cpu1.setField(game.field);
+    int games = cpu1.benchmarkMCTS();
+    return games;
 }

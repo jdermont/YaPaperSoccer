@@ -73,5 +73,19 @@
                 android:text="@string/hard"
                 android:id="@+id/hardBtn" />
         </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="200dp"
+                android:text="@string/experimental"
+                android:id="@+id/experimentalBtn" />
+
+        </TableRow>
     </TableLayout>
 </ScrollView>
